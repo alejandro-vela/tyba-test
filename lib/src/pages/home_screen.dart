@@ -135,10 +135,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Image(
                           fit: BoxFit.scaleDown,
                           height: 4.h,
-                          image: NetworkImage(
-                              'https://cdn-icons-png.flaticon.com/512/154/154378.png?w=1380&t=st=1662821833~exp=1662822433~hmac=b58c788c8bc7096d4bbe8e61fec61d731164dd245ab07033ae8a73c5ff77b412'),
-                        ),
-                      ),
+                          image: AssetImage('assets/nophoto.png'),
+                        )),
                 title: Text(data[index].name),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
@@ -186,9 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             : Image(
                                 fit: BoxFit.scaleDown,
                                 height: 13.h,
-                                image: NetworkImage(
-                                    'https://cdn-icons-png.flaticon.com/512/154/154378.png?w=1380&t=st=1662821833~exp=1662822433~hmac=b58c788c8bc7096d4bbe8e61fec61d731164dd245ab07033ae8a73c5ff77b412'),
-                              ),
+                                image: AssetImage('assets/nophoto.png')),
                         Container(
                           padding: EdgeInsets.all(10),
                           child: Text(

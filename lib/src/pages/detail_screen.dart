@@ -59,15 +59,10 @@ class _DetailScreenState extends State<DetailScreen> {
                   _openGallery();
                 },
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(180),
+                  borderRadius: BorderRadius.circular(0),
                   child:
                       widget.bloc.state.universities[widget.index].image == null
-                          ? Image.network(
-                              'https://img.icons8.com/ios/452/no-image.png',
-                              fit: BoxFit.contain,
-                              height: 150,
-                              width: 150,
-                            )
+                          ? Image.asset('assets/no-Image-Icon.png')
                           : Image.file(
                               fit: BoxFit.cover,
                               File(widget.bloc.state.universities[widget.index]
