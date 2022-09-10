@@ -12,5 +12,6 @@ class UniversityInitialEvent extends UniversityEvent {}
 class NoneEvent extends UniversityEvent {}
 
 class GetUniversitysEvent extends UniversityEvent {
-  const GetUniversitysEvent();
+  final int page;
+  const GetUniversitysEvent({required this.page});
 }

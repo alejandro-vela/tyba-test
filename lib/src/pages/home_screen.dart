@@ -28,12 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
   late UniversityBloc _bloc = UniversityBloc();
   bool isLoading = false;
   bool _gridFlag = true;
+  int page = 1;
+  List<UniversityModel> universities = [];
   final ScrollController _controller = ScrollController();
 
   @override
   void initState() {
     widget.newBLoc == null
-        ? _bloc.add(GetUniversitysEvent())
+        ? _bloc.add(GetUniversitysEvent(page: page))
         : _bloc = widget.newBLoc;
     super.initState();
   }
@@ -81,11 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
         bloc: _bloc,
         builder: (context, state) {
           if (state is HasUniversityState) {
+            universities = state.universities;
             return Container(
               margin: EdgeInsets.only(top: 8.h),
               child: _gridFlag
-                  ? _list(context, state.universities)
-                  : _grid(context, state.universities),
+                  ? _list(context, universities)
+                  : _grid(context, universities),
             );
           }
           return Center();
@@ -97,7 +100,8 @@ class _HomeScreenState extends State<HomeScreen> {
         onNotification: (notification) {
           if (_controller.position.maxScrollExtent ==
               _controller.position.pixels) {
-            //TODO me falto implementar la logica para el scroll infinito
+            page = page + 1;
+            _bloc.add(GetUniversitysEvent(page: page = page++));
           }
           return true;
         },
@@ -150,7 +154,8 @@ class _HomeScreenState extends State<HomeScreen> {
       onNotification: (notification) {
         if (_controller.position.maxScrollExtent ==
             _controller.position.pixels) {
-          //TODO me falto implementar la logica para el scroll infinito
+          page = page++;
+          _bloc.add(GetUniversitysEvent(page: page));
         }
 
         return true;

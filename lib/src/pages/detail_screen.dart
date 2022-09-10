@@ -33,16 +33,19 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: _content(context),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          navigateToHome(context, true, widget.bloc);
-        },
-        backgroundColor: AppColors.primaryDarkColor,
-        child: Icon(Icons.add),
+    return WillPopScope(
+      onWillPop: () => navigateToHome(context, true, widget.bloc),
+      child: Scaffold(
+        body: SafeArea(
+          child: _content(context),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            navigateToHome(context, true, widget.bloc);
+          },
+          backgroundColor: AppColors.primaryDarkColor,
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }
