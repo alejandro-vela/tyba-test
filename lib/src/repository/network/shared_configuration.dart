@@ -11,5 +11,5 @@ class Network {
     HttpHeaders.acceptHeader: 'application/json',
     HttpHeaders.contentTypeHeader: 'application/json',
   };
-  final String baseUrlDevelopment = 'https://tyba-assets.s3.amazonaws.com/';
+  final String baseUrlDevelopment = 'tyba-assets.s3.amazonaws.com';
 }
