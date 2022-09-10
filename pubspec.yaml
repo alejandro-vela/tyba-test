@@ -21,6 +21,9 @@ dependencies:
   #Console
   logger: ^1.1.0
 
+  #Render
+  flutter_svg: ^1.1.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
