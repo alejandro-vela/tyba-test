@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tyba_test/src/pages/detail_screem.dart';
+import 'package:tyba_test/src/pages/detail_screen.dart';
 import '../../bloc/university_bloc/university_bloc.dart';
 import '../../pages/home_screen.dart';
 
@@ -18,7 +18,7 @@ navigateToDetailScreen(
     Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (BuildContext contextt) {
       return DetailScreen(
-        universityBloc: universityBloc,
+        bloc: universityBloc,
         index: index,
       );
     }), (Route route) => false);

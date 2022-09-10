@@ -18,6 +18,7 @@ class UniversityRepositoryDefault implements UniversityRepository {
   Future<List<UniversityModel>?> getUniversities() async {
     try {
       UniversityEndpoint endpoint = UniversityEndpoint();
+      _logger.wtf(endpoint);
       Response response = await apiRepository.request(endpoint: endpoint);
       if (response.statusCode == 200) {
         List<UniversityModel> data = universityModelFromJson(response.body);

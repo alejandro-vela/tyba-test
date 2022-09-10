@@ -12,14 +12,14 @@ String universityModelToJson(List<UniversityModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class UniversityModel {
-  UniversityModel({
-    required this.alphaTwoCode,
-    required this.domains,
-    required this.country,
-    required this.stateProvince,
-    required this.webPages,
-    required this.name,
-  });
+  UniversityModel(
+      {required this.alphaTwoCode,
+      required this.domains,
+      required this.country,
+      required this.stateProvince,
+      required this.webPages,
+      required this.name,
+      this.image});
 
   String alphaTwoCode;
   List<String> domains;
@@ -27,6 +27,7 @@ class UniversityModel {
   dynamic stateProvince;
   List<String> webPages;
   String name;
+  String? image;
 
   factory UniversityModel.fromJson(Map<String, dynamic> json) =>
       UniversityModel(
@@ -36,6 +37,7 @@ class UniversityModel {
         stateProvince: json['state-province'],
         webPages: List<String>.from(json['web_pages'].map((x) => x)),
         name: json['name'],
+        image: json['image'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -45,5 +47,6 @@ class UniversityModel {
         'state-province': stateProvince,
         'web_pages': List<dynamic>.from(webPages.map((x) => x)),
         'name': name,
+        'image': image,
       };
 }

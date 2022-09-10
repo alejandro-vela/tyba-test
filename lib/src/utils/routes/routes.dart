@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tyba_test/src/pages/detail_screem.dart';
+import 'package:tyba_test/src/pages/detail_screen.dart';
 import '../../pages/home_screen.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {

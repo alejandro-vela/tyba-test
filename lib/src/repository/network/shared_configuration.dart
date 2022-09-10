@@ -12,4 +12,6 @@ class Network {
     HttpHeaders.contentTypeHeader: 'application/json',
   };
   final String baseUrlDevelopment = 'tyba-assets.s3.amazonaws.com';
+  final String baseUrlImageTyba =
+      'https://tyba.com.co/wp-content/uploads/2022/07/tyba-logo.svg';
 }
