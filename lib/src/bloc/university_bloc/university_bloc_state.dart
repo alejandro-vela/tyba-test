@@ -9,7 +9,7 @@ abstract class UniversityState extends Equatable {
   List<Object> get props => [];
 }
 
-class GetTipInitial extends UniversityState {}
+class GetUniversityInitial extends UniversityState {}
 
 class NoneState extends UniversityState {}
 

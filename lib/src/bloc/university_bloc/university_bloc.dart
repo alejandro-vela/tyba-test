@@ -6,33 +6,34 @@ import '../../../global_locator.dart';
 import '../../repository/endpoints/university_repository.dart';
 
 class UniversityBloc extends Bloc<UniversityEvent, UniversityState> {
-  UniversityBloc() : super(GetTipInitial());
+  UniversityBloc() : super(GetUniversityInitial());
 
-  var tipRepository = global<UniversityRepository>();
+  var universityRepository = global<UniversityRepository>();
 
   @override
   Stream<UniversityState> mapEventToState(UniversityEvent event) async* {
     if (event is GetUniversitysEvent) {
-      yield* _tipToState(event);
+      yield* _universitiesToState(event);
     } else if (event is NoneEvent) {
       yield NoneState();
     }
   }
 
-  Stream<UniversityState> _tipToState(UniversityEvent event) async* {
+  Stream<UniversityState> _universitiesToState(UniversityEvent event) async* {
     try {
-      var response = await tipRepository.getTips();
+      var response = await universityRepository.getUniversities();
 
       if (response != null) {
         yield HasUniversityState(universities: response);
       } else {
         yield FinishWithError(
             error:
-                'Tenemos problemas para obtener los tips, intenta mas tarde');
+                'Tenemos problemas para obtener las Universidades, intenta mas tarde');
       }
     } catch (e) {
       yield FinishWithError(
-          error: 'Tenemos problemas para obtener los tips, intenta mas tarde');
+          error:
+              'Tenemos problemas para obtener los Universidades, intenta mas tarde');
     }
   }
 }

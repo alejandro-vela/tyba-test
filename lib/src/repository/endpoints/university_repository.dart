@@ -7,7 +7,7 @@ import '../models/university.dart';
 import '../network/api_repository.dart';
 
 abstract class UniversityRepository {
-  Future<List<UniversityModel>?> getTips();
+  Future<List<UniversityModel>?> getUniversities();
 }
 
 class UniversityRepositoryDefault implements UniversityRepository {
@@ -15,7 +15,7 @@ class UniversityRepositoryDefault implements UniversityRepository {
   final _logger = global<Logger>();
 
   @override
-  Future<List<UniversityModel>?> getTips() async {
+  Future<List<UniversityModel>?> getUniversities() async {
     try {
       UniversityEndpoint endpoint = UniversityEndpoint();
       Response response = await apiRepository.request(endpoint: endpoint);
