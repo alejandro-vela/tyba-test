@@ -1,16 +1,14 @@
-# tyba_test
+# Prueba tecnica para Tyba
+## _Realizada por Carlos Alejandro Vela Muñoz_
 
-A new Flutter project.
+Prueba realizada con:
 
-## Getting Started
+- Patron bloc
+- Inyeccion de dependencias 
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Pueden navegar a la pagina web de cada universidad
+- Pueden cambiar entre Vista de lista y de Grilla
+- Pueden subir imagen y esta persiste en la sesion
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
