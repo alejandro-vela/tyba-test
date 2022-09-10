@@ -163,36 +163,41 @@ class _HomeScreenState extends State<HomeScreen> {
         childAspectRatio: 3.6 / 4,
         children: List.generate(data.length, (index) {
           return Center(
-            child: Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)),
-              color: AppColors.primaryLigthColor,
-              margin: EdgeInsets.all(15),
-              elevation: 10,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: SizedBox(
-                  width: 100.w,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      data[index].image != null
-                          ? Image.file(File(data[index].image!))
-                          : Image(
-                              fit: BoxFit.scaleDown,
-                              height: 13.h,
-                              image: NetworkImage(
-                                  'https://cdn-icons-png.flaticon.com/512/154/154378.png?w=1380&t=st=1662821833~exp=1662822433~hmac=b58c788c8bc7096d4bbe8e61fec61d731164dd245ab07033ae8a73c5ff77b412'),
-                            ),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        child: Text(
-                          data[index].name,
-                          textAlign: TextAlign.center,
+            child: InkWell(
+              onTap: (() {
+                navigateToDetailScreen(context, _bloc, index);
+              }),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                color: AppColors.primaryLigthColor,
+                margin: EdgeInsets.all(15),
+                elevation: 10,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: SizedBox(
+                    width: 100.w,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        data[index].image != null
+                            ? Image.file(File(data[index].image!))
+                            : Image(
+                                fit: BoxFit.scaleDown,
+                                height: 13.h,
+                                image: NetworkImage(
+                                    'https://cdn-icons-png.flaticon.com/512/154/154378.png?w=1380&t=st=1662821833~exp=1662822433~hmac=b58c788c8bc7096d4bbe8e61fec61d731164dd245ab07033ae8a73c5ff77b412'),
+                              ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            data[index].name,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
